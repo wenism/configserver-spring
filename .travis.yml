@@ -12,6 +12,8 @@ before_install:
 after_success:
   - echo APP_VERSION is $APP_VERSION
   - echo login is $DOCKER_USERNAME
+  - ls -al build
+  - ls -al build/libs
   - docker build -t wenism/configserver-spring:$APP_VERSION .
   - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
   - docker push wenism/configserver-spring:$APP_VERSION  
