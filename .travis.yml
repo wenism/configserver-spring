@@ -1,0 +1,17 @@
+language: java
+
+sudo: required
+
+services:
+  - docker
+  
+before_install:
+  - export APP_VERSION=`git describe --always`
+  - chmod +x gradlew
+
+after_success:
+  - echo APP_VERSION is $APP_VERSION
+  - echo login is $DOCKER_USERNAME
+  - docker build -t wenism/configserver-spring:$APP_VERSION .
+  - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
+  - docker push wenism/configserver-spring:$APP_VERSION  
