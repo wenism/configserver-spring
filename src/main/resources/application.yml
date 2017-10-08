@@ -9,6 +9,9 @@ spring:
       server:
         git:
           uri: https://github.com/wenism/configserverrepo-spring
+      monitor:
+        github:
+          enabled: true
           
 logging:
   level:
