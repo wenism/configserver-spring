@@ -1,38 +1,42 @@
+apply plugin: 'java'
+apply plugin: 'org.springframework.boot'
+// apply from: 'buildsupport/xxx'
+
+group = 'com.thenational.wm'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
 buildscript {
 	ext {
 		springBootVersion = '1.5.7.RELEASE'
 	}
 	repositories {
 		mavenCentral()
+    // stub
 	}
 	dependencies {
 		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
 	}
 }
 
-apply plugin: 'java'
-apply plugin: 'org.springframework.boot'
-
-group = 'com.example'
-version = '1'
-sourceCompatibility = 1.8
-
 repositories {
 	mavenCentral()
+  // stub
 }
 
+jar {
+  baseName = "application"
+  // stub manifest
+}
 
 ext {
 	springCloudVersion = 'Dalston.SR3'
 }
 
 dependencies {
-  //compile("org.springframework.boot:spring-boot-starter-web") 
 	compile('org.springframework.cloud:spring-cloud-starter-config')
   compile('org.springframework.cloud:spring-cloud-config-server')
-  compile('org.springframework.cloud:spring-cloud-config-monitor')
-  compile('org.springframework.cloud:spring-cloud-starter-bus-amqp')
-  compile('org.springframework.security:spring-security-rsa')
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 }
 
