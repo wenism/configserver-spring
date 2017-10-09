@@ -1,0 +1,22 @@
+common:
+  c1: common-value1
+nginx:
+  server:
+    name: example.com
+    
+message: global-value
+
+key1: global-global
+
+---
+spring:
+  profiles: development
+nginx:
+  server:
+    name: develop.com
+    
+key1: global-dev
+
+management:
+  security:
+    enabled: false
