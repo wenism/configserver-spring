@@ -1,0 +1,4 @@
+[submodule "buildsupport"]
+  path = buildsupport
+  url = ../buildsupport
+  branch = master
