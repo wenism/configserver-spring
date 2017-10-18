@@ -9,6 +9,16 @@ spring:
       server:
         git:
           uri: https://github.com/wenism/configserverrepo-spring
+          repos:
+            nonprod:
+              pattern:
+                - '*/development'
+                - '*/sit'
+              uri: https://github.com/wenism/configserverrepo-spring1.git
+            prod:
+              pattern:
+                - '*/prod'
+              uri: https://github.com/wenism/config-prod.git
       monitor:
         github:
           enabled: true
